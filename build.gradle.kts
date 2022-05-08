@@ -9,7 +9,7 @@ plugins {
 }
 
 allprojects {
-	group = "com.thoughtworks"
+	group = "com.stringconcat"
 	version = "0.0.1-SNAPSHOT"
 
 	repositories {
@@ -60,11 +60,11 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 
 	//persistance
-	implementation("org.postgresql:postgresql:42.3.1")
-	implementation("org.liquibase:liquibase-core:4.6.1")
+	implementation("org.postgresql:postgresql:42.3.4")
+	implementation("org.liquibase:liquibase-core:4.9.1")
 
 	// tests
-	testCompile("org.junit.jupiter:junit-jupiter-api:5.5.2")
+	testCompile("org.junit.jupiter:junit-jupiter-api:5.8.2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}

@@ -16,7 +16,7 @@
     <changeSet id="create-person-sequence" author="elukianov" runOnChange="false" failOnError="true">
         <sql>
             <![CDATA[
-                CREATE SEQUENCE IF NOT EXISTS people.person_id_seq;
+                CREATE SEQUENCE IF NOT EXISTS people.person_entity_id_seq;
             ]]>
         </sql>
     </changeSet>
@@ -24,14 +24,14 @@
     <changeSet id="create-people-table" author="elukianov" runOnChange="false" failOnError="true">
         <sql>
             <![CDATA[
-                CREATE TABLE IF NOT EXISTS people.person (
-                 id TEXT PRIMARY KEY NOT NULL,
-                 first_name TEXT NOT NULL,
-                 second_name TEXT NOT NULL,
-                 birth_date DATE NOT NULL,
-                 sex TEXT NOT NULL,
-                 avatart_url TEXT NOT NULL,
-                 favorite_quote TEXT NOT NULL);
+                CREATE TABLE IF NOT EXISTS people.person_entity (
+                 id uuid PRIMARY KEY NOT NULL,
+                 avatart_url character varying(255),
+                 birth_date date,
+                 favorite_quote character varying(255),
+                 first_name character varying(255),
+                 second_name character varying(255),
+                 sex integer);
             ]]>
         </sql>
     </changeSet>
