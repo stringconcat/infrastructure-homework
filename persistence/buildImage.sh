@@ -7,7 +7,7 @@ if [ -z "$1" ];
     echo No image tag provided. Latest will be used
     imageTag=latest
 fi
-repositoryName=usecasepeople
+repositoryName=persistence
 imageFullName=$repositoryName:$imageTag
 
 echo [Persistence STARTING] building $imageFullName

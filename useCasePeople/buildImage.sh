@@ -15,8 +15,8 @@ echo [Use case people STARTING] building $imageFullName
 echo [Use case people] creating jar...
 (exec "${BASH_SOURCE%/*}/../gradlew" bootJar -no-daemon)
 
-echo [Use case people] creating docker image...
+echo [Use case people] creating docker image $imageFullName...
 docker build -t $imageFullName "${BASH_SOURCE%/*}"
 
-echo [Use case people FINISHED] image has been built
+echo [Use case people FINISHED] image $imageFullName has been built
 

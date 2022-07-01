@@ -7,7 +7,7 @@ if [ -z "$1" ];
     echo No image tag provided. Latest will be used
     imageTag=latest
 fi
-repositoryName=usecasepeople
+repositoryName=quote_garden
 imageFullName=$repositoryName:$imageTag
 
 echo [Quote garden STARTING] building $imageFullName

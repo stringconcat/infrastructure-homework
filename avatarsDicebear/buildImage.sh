@@ -7,7 +7,7 @@ if [ -z "$1" ];
     echo No image tag provided. Latest will be used
     imageTag=latest
 fi
-repositoryName=usecasepeople
+repositoryName=avatars_dicebear
 imageFullName=$repositoryName:$imageTag
 
 echo [Avatars DiceBear STARTING] building $imageFullName
