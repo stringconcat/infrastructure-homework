@@ -12,13 +12,9 @@ data class Person(
         val secondName: String,
         val birthDate: LocalDate,
         val sex: Sex,
-        var avatartUrl: String = DEFAULT_ROBOT_AVATAR,
+        var avatarUrl: String = DEFAULT_ROBOT_AVATAR,
         val favoriteQuote: String
 ) {
-
-    fun mature(forDate: LocalDate = LocalDate.now()): Boolean =
-            age(forDate) > 40
-
 
     fun age(forDate: LocalDate = LocalDate.now()): Year =
             Period.between(forDate, birthDate).years
@@ -28,7 +24,7 @@ data class Person(
     }
 
     fun changeAvatar(pictureUrl: String) {
-        avatartUrl = pictureUrl
+        avatarUrl = pictureUrl
     }
 }
 

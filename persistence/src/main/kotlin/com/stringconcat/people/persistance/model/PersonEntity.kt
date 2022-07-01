@@ -13,7 +13,7 @@ data class PersonEntity(
         val secondName: String,
         val birthDate: LocalDate,
         val sex: Sex,
-        val avatartUrl: String,
+        val avatarUrl: String,
         val favoriteQuote: String
 ) {
     enum class Sex {
@@ -28,7 +28,7 @@ data class PersonEntity(
                         secondName = p.secondName,
                         birthDate = p.birthDate,
                         sex = if (p.sex == Person.Sex.MAN) Sex.MAN else Sex.WOMAN,
-                        avatartUrl = p.avatartUrl,
+                        avatarUrl = p.avatarUrl,
                         favoriteQuote = p.favoriteQuote
                 )
 
@@ -39,7 +39,7 @@ data class PersonEntity(
                         secondName = p.secondName,
                         birthDate = p.birthDate,
                         sex = if (p.sex == Sex.MAN) Person.Sex.MAN else Person.Sex.WOMAN,
-                        avatartUrl = p.avatartUrl,
+                        avatarUrl = p.avatarUrl,
                         favoriteQuote = p.favoriteQuote
                 )
     }

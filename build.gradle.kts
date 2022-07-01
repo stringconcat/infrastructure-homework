@@ -14,7 +14,6 @@ allprojects {
 
 	repositories {
 		mavenCentral()
-		jcenter()
 		maven { url = uri("https://repo.spring.io/milestone") }
 		maven { url = uri("https://repo.spring.io/snapshot") }
 	}
@@ -30,7 +29,7 @@ allprojects {
 
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
-val developmentOnly by configurations.creating
+val developmentOnly: Configuration by configurations.creating
 configurations {
 	runtimeClasspath {
 		extendsFrom(developmentOnly)
@@ -59,7 +58,7 @@ dependencies {
 	// dev tools
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 
-	//persistance
+	//persistence
 	implementation("org.postgresql:postgresql:42.3.4")
 	implementation("org.liquibase:liquibase-core:4.9.1")
 
