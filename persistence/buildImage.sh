@@ -13,7 +13,7 @@ imageFullName=$repositoryName:$imageTag
 echo [Persistence STARTING] building $imageFullName
 
 echo [Persistence ] creating jar...
-(exec "${BASH_SOURCE%/*}/../gradlew" bootJar -no-daemon)
+(exec "${BASH_SOURCE%/*}/../gradlew" bootJar --no-daemon)
 
 echo [Persistence ] creating docker image...
 docker build -t $imageFullName "${BASH_SOURCE%/*}"

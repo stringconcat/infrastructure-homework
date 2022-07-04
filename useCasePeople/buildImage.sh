@@ -13,7 +13,7 @@ imageFullName=$repositoryName:$imageTag
 echo [Use case people STARTING] building $imageFullName
 
 echo [Use case people] creating jar...
-(exec "${BASH_SOURCE%/*}/../gradlew" bootJar -no-daemon)
+(exec "${BASH_SOURCE%/*}/../gradlew" bootJar --no-daemon)
 
 echo [Use case people] creating docker image $imageFullName...
 docker build -t $imageFullName "${BASH_SOURCE%/*}"
