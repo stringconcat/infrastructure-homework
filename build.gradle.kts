@@ -14,6 +14,7 @@ allprojects {
 
 	repositories {
 		mavenCentral()
+		jcenter()
 		maven { url = uri("https://repo.spring.io/milestone") }
 		maven { url = uri("https://repo.spring.io/snapshot") }
 	}
@@ -58,9 +59,9 @@ dependencies {
 	// dev tools
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 
-	//persistence
-	implementation("org.postgresql:postgresql:42.3.6")
-	implementation("org.liquibase:liquibase-core:4.11.0")
+	//persistance
+	implementation("org.postgresql:postgresql:42.3.4")
+	implementation("org.liquibase:liquibase-core:4.9.1")
 
 	// tests
 	testCompile("org.junit.jupiter:junit-jupiter-api:5.8.2")
