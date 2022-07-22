@@ -5,8 +5,10 @@ import java.time.LocalDate
 import java.util.*
 import javax.persistence.Entity
 import javax.persistence.Id
+import javax.persistence.Table
 
 @Entity
+@Table(name = "person_entity", schema = "people")
 data class PersonEntity(
         @Id val id: UUID = UUID.randomUUID(),
         val firstName: String,
