@@ -2,6 +2,7 @@ package com.stringconcat.people.quotesGarden
 
 import com.stringconcat.people.businessPeople.Quote
 import com.stringconcat.people.businessPeople.QuotesProvider
+import org.springframework.http.HttpStatus
 import org.springframework.web.client.RestTemplate
 import javax.inject.Named
 
@@ -12,10 +13,16 @@ class QuoteGardenProvider : QuotesProvider {
 
     private val getRandomUrl = "https://api.forismatic.com/api/1.0/?method=getQuote&format=json"
 
-    override fun randomQuote(): Quote =
-            RestTemplate()
-                    .getForEntity(getRandomUrl, QuoteResponse::class.java)
-                    .body?.quoteText ?: defaultQuote
+    override fun randomQuote(): Quote {
+        val response = RestTemplate()
+                .getForEntity(getRandomUrl, QuoteResponse::class.java)
+
+        check(response.statusCode == HttpStatus.OK) {
+            return defaultQuote
+        }
+
+        return response.body?.quoteText ?: defaultQuote
+    }
 
     internal data class QuoteResponse(
             val quoteText: String,
