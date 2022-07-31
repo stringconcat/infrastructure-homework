@@ -18,7 +18,7 @@ class PersonRespectfullViewModel(
             else ""
 
 
-    fun avatarUrl() = person.avatartUrl
+    fun avatarUrl() = person.avatarUrl
 
     fun birthDate() = "${person.birthDate.dayOfMonth} ${person.birthDate.month} ${person.birthDate.year}"
 
