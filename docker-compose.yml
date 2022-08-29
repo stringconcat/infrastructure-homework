@@ -1,0 +1,11 @@
+version: '2'
+services:
+
+  people-app:
+    image: infrastructure_homework
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      JAVA_OPTS: "-Xms1024m -Xmx1024m"
+

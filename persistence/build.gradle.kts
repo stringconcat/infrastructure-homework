@@ -11,14 +11,14 @@ dependencies {
     implementation(project(":useCasePeople"))
 
     implementation("javax.persistence:javax.persistence-api:2.2")
-    implementation("org.apache.logging.log4j:log4j-core:2.17.2")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.2.1.BUILD-SNAPSHOT")
+    implementation("org.apache.logging.log4j:log4j-core:2.18.0")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.7.3")
 
     // kotlin
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
     // tests
-    testCompile("org.junit.jupiter:junit-jupiter-api:5.5.2")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.5.2")
+    testCompileOnly("org.junit.jupiter:junit-jupiter-api:5.9.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.0")
 }
