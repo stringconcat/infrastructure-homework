@@ -9,8 +9,9 @@ class PersonRespectfullViewModel(
     fun title() =
             "${prefixIfNeeded()} ${person.firstName} ${person.secondName}"
 
+
     private fun prefixIfNeeded() =
-            if (person.age() > 40)
+            if (person.isMature())
                 when (person.sex) {
                     Person.Sex.MAN -> "Mr"
                     Person.Sex.WOMAN -> "Mrs"

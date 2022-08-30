@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.7.2:BUILD-SNAPSHOT"
+	id("org.springframework.boot") version "2.7.3"
 	id("io.spring.dependency-management") version "1.0.13.RELEASE"
 	kotlin("jvm") version "1.7.10"
 	kotlin("plugin.spring") version "1.7.10"
@@ -9,7 +9,7 @@ plugins {
 	id("io.gitlab.arturbosch.detekt") version "1.21.0"
 }
 
-allprojects {
+ allprojects {
 	group = "com.stringconcat"
 	version = "0.0.1"
 
@@ -19,22 +19,37 @@ allprojects {
 		maven { url = uri("https://repo.spring.io/snapshot") }
 	}
 
+
 	tasks.withType<KotlinCompile> {
 		kotlinOptions {
 			freeCompilerArgs = listOf("-Xjsr305=strict")
 			jvmTarget = "1.8"
+			allWarningsAsErrors = true
 		}
 	}
 
+
+	apply(plugin = "io.gitlab.arturbosch.detekt")
+
+	detekt {
+		buildUponDefaultConfig = true
+		allRules = true
+		config = files("$rootDir/detekt/config.yml")
+	}
+
+	tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
+		reports {
+			html.required.set(true)
+		}
+	}
+
+	tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
+		jvmTarget = "1.8"
+	}
 }
 
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
-detekt {
-
-	config = files("${rootProject.projectDir}/detekt/detekt-config.yml")
-	buildUponDefaultConfig = true
-}
 
 
 dependencies {
@@ -72,3 +87,5 @@ dependencies {
 tasks.test {
 	useJUnitPlatform()
 }
+
+

@@ -1,0 +1,42 @@
+build:
+  maxIssues: 0
+  excludeCorrectable: false
+
+config:
+  validation: true
+  warningsAsErrors: false
+
+complexity:
+  LongParameterList:
+    active: true
+    functionThreshold: 130
+    constructorThreshold: 130
+
+exceptions:
+  SwallowedException:
+    active: false
+
+naming:
+  FunctionMaxLength:
+    active: true
+    maximumFunctionNameLength: 30
+  VariableNaming:
+    variablePattern: '[a-z][A-Za-z0-9]*'
+    privateVariablePattern: '(_)?[a-z][A-Za-z0-9]*'
+
+style:
+  NewLineAtEndOfFile:
+    active: false
+  ReturnCount:
+    active: true
+    max: 3
+
+
+performance:
+  SpreadOperator:
+    active: false
+
+
+
+
+

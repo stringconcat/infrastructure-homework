@@ -1,7 +1,12 @@
 package com.stringconcat.people.presentation.view
 
 import com.stringconcat.people.presentation.model.PersonRespectfullViewModel
-import kotlinx.html.*
+import kotlinx.html.html;
+import kotlinx.html.body;
+import kotlinx.html.div;
+import kotlinx.html.h1;
+import kotlinx.html.img;
+import kotlinx.html.p;
 import kotlinx.html.stream.appendHTML
 
 
