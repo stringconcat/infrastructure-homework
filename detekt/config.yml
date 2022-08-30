@@ -2,10 +2,6 @@ build:
   maxIssues: 0
   excludeCorrectable: false
 
-config:
-  validation: true
-  warningsAsErrors: false
-
 complexity:
   LongParameterList:
     active: true
@@ -20,9 +16,6 @@ naming:
   FunctionMaxLength:
     active: true
     maximumFunctionNameLength: 30
-  VariableNaming:
-    variablePattern: '[a-z][A-Za-z0-9]*'
-    privateVariablePattern: '(_)?[a-z][A-Za-z0-9]*'
 
 style:
   NewLineAtEndOfFile:
