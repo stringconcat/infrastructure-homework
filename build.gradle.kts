@@ -64,7 +64,7 @@ dependencies {
 	implementation("org.liquibase:liquibase-core:4.9.1")
 
 	// tests
-	testCompile("org.junit.jupiter:junit-jupiter-api:5.8.2")
+	testCompile("org.junit.jupiter:junit-jupiter-api:5.5.2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
